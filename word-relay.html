@@ -22,13 +22,18 @@
   <input type="text" onkeyup="enterKey()">
   <button class="btn">입력</button>
   <script>
-    const number = Number(prompt('몇 명이 참가하나요?'));
+    let number = Number(prompt('몇 명이 참가하나요?'));
     const $button = document.querySelector('button');
     const $input = document.querySelector('input');
     const $word = document.querySelector('#word');
     const $order = document.querySelector('#order');
     let word; //제시어
     let newWord; // 현재 단어
+    
+    while (!number) { //조건식의 결과가 참인 동안 반복
+    alert('인원수를 입력해주세요:)');
+    number = Number(prompt('몇 명이 참가하나요?'));
+    }
 
     alert('먼저 첫번째 단어를 입력해주세요!');
     $input.focus();
